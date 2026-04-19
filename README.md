@@ -39,26 +39,21 @@ KatsuAnime, anime severler için tasarlanmış modern bir web uygulamasıdır.
 ## Gorseller
 
 <details>
-  <summary>Ekran Görüntülerini Gör (Tıkla)</summary>
-  <p align="center">
-    <br>
-    
-    <b>Ana Sayfa</b><br>
-    <img src="./img/homepage.png" width="700" alt="Ana Sayfa">
-    <br><hr><br>
-    
-    <b>Arama Sayfası</b><br>
-    <img src="./img/searhpage.png" width="700" alt="Arama Sayfası">
-    <br><hr><br>
-    
-    <b>Takvim Sayfası</b><br>
-    <img src="./img/calendarpage.png" width="700" alt="Takvim Sayfası">
-    <br><hr><br>
-    
-    <b>Giriş Paneli</b><br>
-    <img src="./img/loginmodal.png" width="400" alt="Giriş Modalı">
-    
-  </p>
+<summary>Ekran Görüntülerini Gör (Tıkla)</summary>
+<p align="center">
+<br>
+<b>Ana Sayfa</b><br>
+<img src="./img/homepage.png" width="700" alt="Ana Sayfa">
+<br><hr><br>
+<b>Arama Sayfası</b><br>
+<img src="./img/searhpage.png" width="700" alt="Arama Sayfası">
+<br><hr><br>
+<b>Takvim Sayfası</b><br>
+<img src="./img/calendarpage.png" width="700" alt="Takvim Sayfası">
+<br><hr><br>
+<b>Giriş Paneli</b><br>
+<img src="./img/loginmodal.png" width="400" alt="Giriş Modalı">
+</p>
 </details>
 
 ---

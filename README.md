@@ -11,180 +11,165 @@
 
 </div>
 
----
+KatsuAnime is a modern web application designed for anime lovers.
 
-## Içindekiler
-
-- [Proje Hakkında](#proje-hakkında)
-- [Görseller](#gorseller)
-- [Dosya Yapısı](#dosya-yapısı)
-- [Kurulum](#kurulum)
-- [Geliştirme](#geliştirme)
-- [Lisans](#lisans)
+Features:
+- Watch anime
+- Discover and search anime
+- Anime calendar
+- Modern and responsive design
 
 ---
 
-## Proje Hakkında
-
-KatsuAnime, anime severler için tasarlanmış modern bir web uygulamasıdır.
-
-Özellikler:
-- Anime izleme
-- Anime keşfetme ve arama
-- Anime takvimi
-- Modern ve responsive tasarım
-
----
-
-## Gorseller
+## Screenshots
 
 <details>
-<summary>Ekran Görüntülerini Gör (Tıkla)</summary>
+<summary>View Screenshots (Click)</summary>
 <p align="center">
 <br>
-<b>Ana Sayfa</b><br>
-<img src="./img/homepage.png" width="700" alt="Ana Sayfa">
+<b>Home Page</b><br>
+<img src="./img/homepage.png" width="700" alt="Home Page">
 <br><hr><br>
-<b>Arama Sayfası</b><br>
-<img src="./img/searhpage.png" width="700" alt="Arama Sayfası">
+<b>Search Page</b><br>
+<img src="./img/searhpage.png" width="700" alt="Search Page">
 <br><hr><br>
-<b>Takvim Sayfası</b><br>
-<img src="./img/calendarpage.png" width="700" alt="Takvim Sayfası">
+<b>Calendar Page</b><br>
+<img src="./img/calendarpage.png" width="700" alt="Calendar Page">
 <br><hr><br>
-<b>Giriş Paneli</b><br>
-<img src="./img/loginmodal.png" width="400" alt="Giriş Modalı">
+<b>Login Panel</b><br>
+<img src="./img/loginmodal.png" width="400" alt="Login Modal">
 </p>
 </details>
 
 ---
 
 
-## Dosya Yapısı
+## Project Structure
 
 ```
 katsuanime/
 │
 ├── src/
-│   ├── app/                          # Next.js App Router sayfaları
-│   │   ├── page.tsx                 # Ana sayfa (Home)
-│   │   ├── kesfet/                  # Anime keşfetme sayfası
-│   │   ├── profil/                  # Kullanıcı profil sayfası
-│   │   ├── ayarlar/                 # Ayarlar sayfası
-│   │   ├── takvim/                  # Anime takvimi sayfası
-│   │   ├── anime/[slug]/            # Anime detay sayfası
-│   │   ├── izle/[slug]/[episode]/  # Anime oynatma sayfası
-│   │   ├── p/[username]/            # Kullanıcı profil sayfası
+│   ├── app/                          # Next.js App Router pages
+│   │   ├── page.tsx                 # Home page
+│   │   ├── kesfet/                  # Anime discovery page
+│   │   ├── profil/                  # User profile page
+│   │   ├── ayarlar/                 # Settings page
+│   │   ├── takvim/                  # Anime calendar page
+│   │   ├── anime/[slug]/            # Anime detail page
+│   │   ├── izle/[slug]/[episode]/  # Anime player page
+│   │   ├── p/[username]/            # User profile page
 │   │   ├── layout.tsx               # Global layout
-│   │   ├── globals.css              # Global stiller
-│   │   ├── ui.css                   # UI bileşen stilleri
-│   │   └── page.module.css          # Sayfa spesifik stiller
+│   │   ├── globals.css              # Global styles
+│   │   ├── ui.css                   # UI component styles
+│   │   └── page.module.css          # Page specific styles
 │   │
-│   ├── components/                  # React bileşenleri
+│   ├── components/                  # React components
 │   │   ├── auth/
-│   │   │   ├── AuthModal.tsx        # Giriş/Kayıt modal
-│   │   │   └── AuthContext.tsx      # Kimlik doğrulama bağlamı
+│   │   │   ├── AuthModal.tsx        # Login/Register modal
+│   │   │   └── AuthContext.tsx      # Authentication context
 │   │   ├── ui/
-│   │   │   ├── Modal.tsx            # Tekrar kullanılabilir modal
-│   │   │   ├── KatsuPlayer.tsx      # Video oynatıcı bileşeni
-│   │   │   └── Toast.tsx            # Bildirim bileşeni
+│   │   │   ├── Modal.tsx            # Reusable modal
+│   │   │   ├── KatsuPlayer.tsx      # Video player component
+│   │   │   └── Toast.tsx            # Notification component
 │   │   ├── layout/
-│   │   │   └── Sidebar.tsx          # Yan menü bileşeni
+│   │   │   └── Sidebar.tsx          # Sidebar navigation
 │   │   └── home/
-│   │       ├── Hero.tsx             # Ana sayfa hero bölümü
-│   │       ├── AnimeCard.tsx        # Anime kartı bileşeni
-│   │       ├── AnimeHorizontalCard.tsx  # Yatay anime kartı
-│   │       └── AnimeGrid.tsx        # Anime ızgarası
+│   │       ├── Hero.tsx             # Home page hero section
+│   │       ├── AnimeCard.tsx        # Anime card component
+│   │       ├── AnimeHorizontalCard.tsx  # Horizontal anime card
+│   │       └── AnimeGrid.tsx        # Anime grid layout
 │   │
-│   ├── lib/                         # Yardımcı fonksiyonlar ve API
+│   ├── lib/                         # Utility functions and APIs
 │   │   ├── api/
-│   │   │   ├── config.ts            # API yapılandırması
-│   │   │   ├── anime.ts             # Anime API çağrıları
-│   │   │   └── katsu.ts             # KatsuAnime API işlemleri
+│   │   │   ├── config.ts            # API configuration
+│   │   │   ├── anime.ts             # Anime API calls
+│   │   │   └── katsu.ts             # KatsuAnime API operations
 │   │   ├── types/
-│   │   │   └── anime.ts             # TypeScript tür tanımlamaları
-│   │   └── api.ts                   # Genel API fonksiyonları
+│   │   │   └── anime.ts             # TypeScript type definitions
+│   │   └── api.ts                   # General API functions
 │   │
 │   └── ...
 │
-├── public/                          # Statik dosyalar
-│   ├── logo.jpeg                   # Uygulama logosu
-│   ├── next.svg                    # Next.js ikonu
-│   ├── vercel.svg                  # Vercel ikonu
-│   ├── globe.svg                   # Globe ikonu
-│   ├── window.svg                  # Window ikonu
-│   └── file.svg                    # File ikonu
+├── public/                          # Static files
+│   ├── logo.jpeg                   # Application logo
+│   ├── next.svg                    # Next.js icon
+│   ├── vercel.svg                  # Vercel icon
+│   ├── globe.svg                   # Globe icon
+│   ├── window.svg                  # Window icon
+│   └── file.svg                    # File icon
 │
-├── .vscode/                        # VS Code yapılandırması
-│   └── settings.json               # Editor ayarları
+├── .vscode/                        # VS Code configuration
+│   └── settings.json               # Editor settings
 │
-├── .next/                          # Next.js derlenmiş çıktı (prod)
+├── .next/                          # Next.js compiled output (prod)
 ├── .vercel/                        # Vercel deployment config
 │
-├── package.json                    # Proje bağımlılıkları
-├── package-lock.json               # Bağımlılık kilidi
-├── tsconfig.json                   # TypeScript yapılandırması
-├── eslint.config.mjs               # ESLint linter yapılandırması
-├── next.config.ts                  # Next.js yapılandırması
-├── next-env.d.ts                   # Next.js TypeScript definisyonları
-├── .gitignore                      # Git ignore kuralları
-├── .env                            # Ortam değişkenleri
-└── README.md                       # Bu dosya
+├── package.json                    # Project dependencies
+├── package-lock.json               # Dependency lock file
+├── tsconfig.json                   # TypeScript configuration
+├── eslint.config.mjs               # ESLint linter configuration
+├── next.config.ts                  # Next.js configuration
+├── next-env.d.ts                   # Next.js TypeScript definitions
+├── .gitignore                      # Git ignore rules
+├── .env                            # Environment variables
+└── README.md                       # This file
 ```
 
-### Bağımlılıklar
+### Dependencies
 
-**Üretim Bağımlılıkları:**
+**Production Dependencies:**
 - `next@16.1.6` - React framework
-- `react@19.2.3` - UI kütüphanesi
+- `react@19.2.3` - UI library
 - `react-dom@19.2.3` - React DOM
-- `lucide-react@1.8.0` - İkon kütüphanesi
+- `lucide-react@1.8.0` - Icon library
 
-**Geliştirme Bağımlılıkları:**
-- `typescript@5` - Tür kontrolü
-- `eslint@9` - Kod kalitesi
-- `@types/*` - TypeScript tür tanımlamaları
+**Development Dependencies:**
+- `typescript@5` - Type checking
+- `eslint@9` - Code quality
+- `@types/*` - TypeScript type definitions
 
 ---
 
-## Kurulum
+## Installation
 
-### Gereksinimler
+### Requirements
 - Node.js 18.0+
-- npm veya yarn
+- npm or yarn
 
-### Adımlar
+### Steps
 
 ```bash
-# Projeyi klonlayın
-git clone https://github.com/kullanıcıadı/katsuanime.git
+# Clone the repository
+git clone https://github.com/username/katsuanime.git
 cd katsuanime
 
-# Bağımlılıkları yükleyin
+# Install dependencies
 npm install
 
-# Ortam değişkenlerini ayarlayın
+# Set up environment variables
 cp .env.example .env.local
 ```
 
 ---
 
-## Geliştirme
+## Development
 
-### Geliştirme Sunucusu Başlatma
+### Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Tarayıcıda `http://localhost:3000` adresini açın.
+Open `http://localhost:3000` in your browser.
 
-### Kod Kontrolü (Lint)
+### Code Linting
 
 ```bash
 npm run lint
 ```
 
-### Üretim Derlemesi
+### Production Build
 
 ```bash
 npm run build
@@ -193,27 +178,27 @@ npm start
 
 ---
 
-## Lisans
+## License
 
-Bu proje **GPL v3** lisansı altında dağıtılmaktadır.
+This project is distributed under the **GPL v3** license.
 
-GPL v3 lisansı hakkında daha fazla bilgi için [LICENSE](./LICENSE) dosyasını veya [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) resmi sayfasını ziyaret edin.
+For more information about the GPL v3 license, visit the [LICENSE](./LICENSE) file or the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html) official page.
 
-### Lisans Özeti
-- Özgür yazılım
-- Kaynağa erişim
-- Değiştirme hakkı
-- Yeniden dağıtım hakkı
-- Aynı lisans altında dağıtım zorunlu
+### License Summary
+- Free software
+- Source code access
+- Right to modify
+- Right to redistribute
+- Distribution under the same license is required
 
 ---
 
-## Katkı Yapmak
+## Contributing
 
-Katkılarınız memnuniyetle karşılanır! Lütfen:
+Your contributions are welcome! Please:
 
-1. Projeyi fork edin
-2. Özellik branch'i oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
-4. Branch'e push yapın (`git push origin feature/AmazingFeature`)
-5. Pull Request açın
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
